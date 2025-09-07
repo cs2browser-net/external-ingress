@@ -1,7 +1,7 @@
 // @ts-expect-error
 import MMDBReader from 'mmdb-reader'
 
-const reader = new MMDBReader("data/geolite2-city-ipv4.mmdb")
+const reader = new MMDBReader("data/dbip-city-ipv4.mmdb")
 
 export function GetIPInfo(ip: string) {
     const ipaddr = reader.lookup(ip)

@@ -4,13 +4,13 @@ A Node.js service that synchronizes Counter-Strike 2 server information from ext
 
 ## Overview
 
-This service fetches CS2 server data from external APIs (currently CS2KZ), resolves server hostnames to IP addresses, enriches the data with geographical information using MaxMind GeoLite2 databases, and stores the results in a MySQL database.
+This service fetches CS2 server data from external APIs (currently CS2KZ), resolves server hostnames to IP addresses, enriches the data with geographical information using MaxMind version of DBIP databases, and stores the results in a MySQL database.
 
 ## Features
 
 - **API Integration**: Syncs server data from CS2KZ API
 - **DNS Resolution**: Converts server hostnames to IP addresses
-- **Geolocation**: Uses MaxMind GeoLite2 databases to get country and coordinates
+- **Geolocation**: Uses MaxMind version of DBIP databases to get country and coordinates
 - **Database Storage**: Stores server information with location data in MySQL
 - **Caching**: In-memory cache to avoid duplicate entries
 - **Automatic Updates**: Runs sync every 60 seconds
@@ -19,7 +19,7 @@ This service fetches CS2 server data from external APIs (currently CS2KZ), resol
 
 - Node.js
 - MySQL database
-- MaxMind GeoLite2 databases (City IPv4 and IPv6)
+- MaxMind version of DBIP databases (City IPv4 and IPv6)
 
 ## Installation
 
@@ -33,9 +33,9 @@ pnpm install
 MYSQL_URI="mysql://username:password@host:port/db_name"
 ```
 
-3. Ensure MaxMind GeoLite2 databases are in the `data/` directory:
-   - `geolite2-city-ipv4.mmdb`
-   - `geolite2-city-ipv6.mmdb`
+3. Ensure MaxMind version of DBIP databases are in the `data/` directory:
+   - `dbip-city-ipv4.mmdb`
+   - `dbip-city-ipv6.mmdb`
 
 4. Set up MySQL database with required table structure:
 ```sql
